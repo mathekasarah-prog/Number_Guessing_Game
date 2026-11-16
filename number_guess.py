@@ -33,6 +33,8 @@ while guess != number and attempts_used < max_attempts:
     
     attempts_used += 1
     
+    remaining_guesses = max_attempts - attempts_used
+    
     if attempts_used == 3 and guess != number:
 
         if number % 2 == 0:
