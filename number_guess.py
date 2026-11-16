@@ -65,6 +65,24 @@ if guess != number:
     print("Game Over!")
     print(f"The correct number was {number}")
     
+print("\n===== LEADERBOARD =====")
+
+try:    
+    scores = []
+
+    with open("high_scores.txt", "r") as file:
+        for line in file:
+            username, score = line.strip().split(",")
+            scores.append((username, int(score)))
+
+    # Sort scores: fewer attempts means a better score
+    scores.sort(key=lambda item: item[1])
+
+    for position, (player, score) in enumerate(scores[:5], start=1):
+        print(f"{position}. {player} - {score} attempts")
+
+except FileNotFoundError:
+    print("No high scores have been recorded yet.")
 
         
     
