@@ -15,7 +15,10 @@ elif difficulty == "medium":
     
 else:
      max_attempts = 10
-    
+
+username = input("Enter your username: ").strip()
+
+
     
 # Generate a random number
 number = random.randint(1,100)
