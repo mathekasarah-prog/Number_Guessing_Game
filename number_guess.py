@@ -1,5 +1,8 @@
 import random
 
+
+username = input("Enter your username: ").strip()
+
 #Choose difficulty level
 difficulty = input("Choose a difficulty level: (Hard, Medium, Easy): ").lower() .strip()
 
