@@ -2,13 +2,19 @@ import random
 
 difficulty = input("Choose a difficulty level: (Hard, Medium, Easy)").lower() .strip()
 if difficulty == "Hard":
-    attempts = 5
+    max_attempts = 5
+    attempts_used =0
     
 elif difficulty == "Medium":
-    attempts = 7
+    max_attempts = 7
+    attempts_used = 0
     
 elif difficulty == "Easy":
-    attempts = 10
+    max_attempts = 10
+    attempts_used = 0
+    
+else:
+    print("Invalid difficulty. Please choose Easy, Medium or Hard.")
 
 number = random.randint(1,100)
 
@@ -23,5 +29,3 @@ elif number > guess:
 elif number < guess:
     print("Too High! Please try again")
     
-else:
-    print("Invalid Number, Please enter a valid Number")
