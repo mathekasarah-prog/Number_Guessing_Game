@@ -1,6 +1,5 @@
 import random
 
-attempts_used = 0
 difficulty = input("Choose a difficulty level: (Hard, Medium, Easy)").lower() .strip()
 if difficulty == "Hard":
     max_attempts = 5
@@ -14,11 +13,20 @@ elif difficulty == "Easy":
 else:
     print("Invalid difficulty. Please choose Easy, Medium or Hard.")
     
-remaining = max_attempts-attempts_used
 
 number = random.randint(1,100)
 
-guess = int(input("Guess a number from 1-100: "))
+attempts_used = 0
+guess = 0
+
+while guess != number and attempts_used < max_attempts:
+
+
+    guess = int(input("Guess a number from 1-100: "))
+    
+    attempts_used += 1
+    
+    remaining_guesses =
 
 if number == guess:
     print("Congratulations, You guessed the number right")
@@ -28,4 +36,7 @@ elif number > guess:
     
 elif number < guess:
     print("Too High! Please try again")
+    
+    guess = 0
+    while  guess != number and attempts_used < max_attempts:
     
