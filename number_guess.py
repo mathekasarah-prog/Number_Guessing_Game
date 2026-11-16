@@ -1,6 +1,6 @@
 import random
 
-difficulty = input("Choose a difficulty level: "("Hard, Medium, Easy"))
+difficulty = input("Choose a difficulty level: (Hard, Medium, Easy)")
 if difficulty == "Hard":
     attempts = 5
     
@@ -18,10 +18,10 @@ if number == guess:
     print("Congratulations, You guessed the number right")
     
 elif number > guess:
-    print("Too Low!")
+    print("Too Low! Please try again")
     
 elif number < guess:
-    print("Too High!")
+    print("Too High! Please try again")
     
 else:
-    print("Invalid Number")
+    print("Invalid Number, Please enter a valid Number")
