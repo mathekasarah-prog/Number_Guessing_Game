@@ -1,6 +1,7 @@
 import random
 
-difficulty = input("Choose a difficulty level: (Hard, Medium, Easy)").lower() .strip()
+#Choose difficulty level
+difficulty = input("Choose a difficulty level: (Hard, Medium, Easy): ").lower() .strip()
 if difficulty == "Hard":
     max_attempts = 5
     
