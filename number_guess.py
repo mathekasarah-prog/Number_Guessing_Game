@@ -16,10 +16,10 @@ elif difficulty == "medium":
 else:
      max_attempts = 10
 
+
+#player username
 username = input("Enter your username: ").strip()
 
-
-    
 # Generate a random number
 number = random.randint(1,100)
 
@@ -28,11 +28,12 @@ attempts_used = 0
 guess = 0
 
 #Start the guessing loop
+print("\n I'm thinking of a number between 0 and 100!")
+
 while guess != number and attempts_used < max_attempts:
 
 
     guess = int(input("Guess a number from 1-100: "))
-    
     attempts_used += 1
     
     remaining_guesses = max_attempts - attempts_used
@@ -42,22 +43,28 @@ while guess != number and attempts_used < max_attempts:
     if guess == number:
         print("Congratulations, You guessed the number right")
         
-    elif guess < number:
-        print("Too Low! Please try again")
+        with open("high_scores.txt", "a") as file:
+            file.write(f"{username},{attempts_used}\n")
         
     else:
-        print("Too High! Please try again")
+        if guess < number:
+            print("Too Low! Please try again")
         
-    if attempts_used == 3:
-        if number % 2 == 0:
-            print("Hint: The number is divisible by 2.")
         else:
-            print("Hint: The number is not divisible by 2.")
-   
-    print(f"You have {remaining_guesses} guesses remaining.")
+            print("Too High! Please try again")
+        
+        if attempts_used == 3:
+            if number % 2 == 0:
+                print("Hint: The number is divisible by 2.")
+            else:
+                print("Hint: The number is not divisible by 2.")
+    
+        print(f"You have {remaining_guesses} guesses remaining.")
 #Check if the player lost
 if guess != number:
     print("Game Over!")
     print(f"The correct number was {number}")
+    
+
         
     
