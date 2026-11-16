@@ -26,17 +26,22 @@ while guess != number and attempts_used < max_attempts:
     
     attempts_used += 1
     
-    remaining_guesses =
+    remaining_guesses = max_attempts - attempts_used
 
-if number == guess:
-    print("Congratulations, You guessed the number right")
-    
-elif number > guess:
-    print("Too Low! Please try again")
-    
-elif number < guess:
-    print("Too High! Please try again")
-    
-    guess = 0
-    while  guess != number and attempts_used < max_attempts:
+    if guess == number:
+        print("Congratulations, You guessed the number right")
+        
+    elif guess < number:
+        print("Too Low! Please try again")
+        
+    else:
+        print("Too High! Please try again")
+        
+        
+        print(f"You have {remaining_guesses} guesses remaining.")
+        
+if guess != number:
+    print("Game Over!")
+    print(f"The correct number was {number}")
+        
     
