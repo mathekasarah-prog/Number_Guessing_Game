@@ -35,15 +35,7 @@ while guess != number and attempts_used < max_attempts:
     
     remaining_guesses = max_attempts - attempts_used
     
-    if attempts_used == 3 and guess != number:
-
-        if number % 2 == 0:
-            print("Hint: The number is divisible by 2.")
-
-        else:
-            print("Hint: The number is not divisible by 2.")
-        
-    remaining_guesses = max_attempts - attempts_used
+    
 #player's guess
     if guess == number:
         print("Congratulations, You guessed the number right")
@@ -54,7 +46,12 @@ while guess != number and attempts_used < max_attempts:
     else:
         print("Too High! Please try again")
         
-        
+    if attempts_used == 3:
+        if number % 2 == 0:
+            print("Hint: The number is divisible by 2.")
+        else:
+            print("Hint: The number is not divisible by 2.")
+   
     print(f"You have {remaining_guesses} guesses remaining.")
 #Check if the player lost
 if guess != number:
