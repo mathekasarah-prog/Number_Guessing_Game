@@ -1,6 +1,6 @@
 import random
 
-difficulty = input("Choose a difficulty level: (Hard, Medium, Easy)").lower
+difficulty = input("Choose a difficulty level: (Hard, Medium, Easy)").lower() .strip()
 if difficulty == "Hard":
     attempts = 5
     
