@@ -1,11 +1,6 @@
 import random
 
 
-username = input("Enter your username: ").strip()
-
-with open("high_scores.txt", "a") as file:
-    file.write("Sarah,3\n")
-
 #Choose difficulty level
 difficulty = input("Choose a difficulty level: (Hard, Medium, Easy): ").lower() .strip()
 
@@ -18,11 +13,9 @@ if difficulty == "hard":
 elif difficulty == "medium":
     max_attempts = 7
     
-elif difficulty == "easy":
-    max_attempts = 10
-    
 else:
-    print("Invalid difficulty. Please choose Easy, Medium or Hard.") 
+     max_attempts = 10
+    
     
 # Generate a random number
 number = random.randint(1,100)
