@@ -14,9 +14,10 @@ elif difficulty == "Easy":
 else:
     print("Invalid difficulty. Please choose Easy, Medium or Hard.")
     
-
+# Generate a random number
 number = random.randint(1,100)
 
+#Initialize variables
 attempts_used = 0
 guess = 0
 
